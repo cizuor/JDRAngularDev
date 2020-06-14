@@ -1,0 +1,19 @@
+<h2> Persos {{connect}}</h2>
+<a class="nav-link text-dark" [routerLink]="['/NewPerso']">Crée nouveau Perso</a>
+<div  *ngIf="connect" class="col-xs-12">
+  <ul class="list-group">
+    <app-perso-info *ngFor="let obj of persos"
+                    [nom]="obj.nom"
+                    [prenom]="obj.prenom"
+                    [race]="obj.nomRace"
+                    [classe]="obj.nomClasse"
+                    [sousrace]="obj.nomSousRace"
+                    [definition]="obj.definition"
+                    [id]="obj.id">    </app-perso-info>
+  </ul>
+
+</div>
+
+<div class="col-xs-12" *ngIf="!connect">
+  <p> vous devez vous connecter</p>
+</div>

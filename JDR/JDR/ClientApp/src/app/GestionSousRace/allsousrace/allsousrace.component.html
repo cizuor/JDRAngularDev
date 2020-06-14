@@ -1,0 +1,13 @@
+<h2> Sous races </h2>
+<a class="nav-link text-dark" [routerLink]="['/newSousRace']">ajouter sousRace</a>
+<div class="col-xs-12">
+  <ul class="list-group">
+    <app-sousraceinfo *ngFor="let obj of sousRaces"
+                    [nom]="obj.nom"
+                    [definition]="obj.definition"
+                    [nomRace]="obj.nomRace"
+                    [id]="obj.id">    </app-sousraceinfo>
+  </ul>
+
+
+</div>

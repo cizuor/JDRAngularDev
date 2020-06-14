@@ -1,0 +1,13 @@
+<span>
+  <p> adresse Email : </p>
+  <input type="text" class="form-control" [(ngModel)]="userSelected['email']" />
+</span>
+<span>
+  <p> pseudo : </p>
+  <input type="text" class="form-control" [(ngModel)]="userSelected['pseudo']" />
+</span>
+<span>
+  <p> mot de passe : </p>
+  <input type="text" class="form-control" [(ngModel)]="userSelected['password']" />
+</span>
+<button (click)=Valider() class="btn btn-success"> Valider</button>

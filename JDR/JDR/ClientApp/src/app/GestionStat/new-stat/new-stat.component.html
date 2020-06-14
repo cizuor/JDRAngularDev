@@ -1,0 +1,32 @@
+
+<span>
+  <p> nom : </p>
+  <input type="text" class="form-control" [(ngModel)]="statNom" />
+</span>
+<span>
+  <p> description : </p>
+  <input type="text" class="form-control" [(ngModel)]="statDef" />
+</span>
+
+<div>
+</div>
+
+<select id="type" type="number" class="form-control" name="type" [(ngModel)]="typeStatSelect">
+  <!-- Below line will be looped through the keys and for every key, set label as value from enum pair and key as value attribute of <option> tag-->
+  <option *ngFor="let key of typestatsOption" [value]="key">{{typestats[key]}}</option>
+</select>
+
+<select id="stats" type="number" class="form-control" name="stats" [(ngModel)]="statselect">
+  <!-- Below line will be looped through the keys and for every key, set label as value from enum pair and key as value attribute of <option> tag-->
+  <option *ngFor="let key of statOption" [value]="key">{{stattype[key]}}</option>
+</select>
+
+<ul class="list-group">
+  <app-new-stat-util *ngFor="let obj of statUtil ; let i = index"
+                [num]="i">    </app-new-stat-util>
+</ul>
+<button class="btn btn-primary" (click)="addStatUtils()"> Ajoute Stat</button>
+
+
+<button (click)=affiche() class="btn btn-success"> Valider</button>
+

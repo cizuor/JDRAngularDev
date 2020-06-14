@@ -1,0 +1,32 @@
+<span>
+  <p> Nom : </p>
+  <input type="text" class="form-control" [(ngModel)]="perso['nom']" />
+</span>
+<span>
+  <p> Prenom : </p>
+  <input type="text" class="form-control" [(ngModel)]="perso['prenom']" />
+</span>
+<span>
+  <p> Description : </p>
+  <input type="text" class="form-control" [(ngModel)]="perso['definition']" />
+</span>
+
+
+<p> Race : </p>
+<select id="race" class="form-control" [(ngModel)]="perso['idRace']">
+  <!-- Below line will be looped through the keys and for every key, set label as value from enum pair and key as value attribute of <option> tag-->
+  <option *ngFor="let obj of races" [ngValue]="obj.id">{{ obj.nom }}</option>
+</select>
+
+<p> SousRace : </p>
+<select id="sousRace" class="form-control" [(ngModel)]="perso['idSousRace']">
+  <!-- Below line will be looped through the keys and for every key, set label as value from enum pair and key as value attribute of <option> tag-->
+  <option *ngFor="let obj of getSousRace()" [ngValue]="obj.id">{{ obj.nom }}</option>
+</select>
+
+
+<p> Classe : </p>
+<select id="classe" class="form-control" [(ngModel)]="perso['idClasse']">
+  <!-- Below line will be looped through the keys and for every key, set label as value from enum pair and key as value attribute of <option> tag-->
+  <option *ngFor="let obj of classes" [ngValue]="obj.id">{{ obj.nom }}</option>
+</select>

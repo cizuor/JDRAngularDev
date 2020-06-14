@@ -1,0 +1,15 @@
+<div *ngIf="connect==true">
+
+  <p> connection réussi : {{userSelected['pseudo']}}</p>
+</div>
+  <div *ngIf ="connect != true"> 
+  <span>
+    <p> adresse Email : </p>
+    <input type="text" class="form-control" [(ngModel)]="mail" />
+  </span>
+  <span>
+    <p> mot de passe : </p>
+    <input type="text" class="form-control" [(ngModel)]="pass" />
+  </span>
+  <button (click)=Valider() class="btn btn-success"> Valider</button>
+</div>

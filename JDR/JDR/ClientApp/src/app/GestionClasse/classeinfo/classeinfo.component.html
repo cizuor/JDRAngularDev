@@ -1,0 +1,5 @@
+<li [ngClass]="{'list-group-item': true,'list-group-item-success': true }">
+  <h4> nom : {{ nom }}</h4>
+  <p> Description : {{ definition }} </p>
+  <a class="nav-link text-dark" [routerLink]="['/editClasse/',id]">modifier classe</a>
+</li>

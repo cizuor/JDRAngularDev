@@ -1,0 +1,12 @@
+<h2> Races </h2>
+<a class="nav-link text-dark" [routerLink]="['/newRace']">ajouter race</a>
+<div class="col-xs-12">
+  <ul class="list-group">
+    <app-raceinfo *ngFor="let obj of races"
+                  [nom]="obj.nom"
+                  [definition]="obj.definition"
+                  [id]="obj.id">    </app-raceinfo>
+  </ul>
+
+
+</div>

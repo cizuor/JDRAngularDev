@@ -1,0 +1,7 @@
+<li [ngClass]="{'list-group-item': true,'list-group-item-action': true }">
+  <select id="stat" class="form-control" [(ngModel)]="statUtil[num]['statUtile']">
+    <!-- Below line will be looped through the keys and for every key, set label as value from enum pair and key as value attribute of <option> tag-->
+    <option *ngFor="let obj of stats" [ngValue]="obj.id">{{ obj.nom }}</option>
+  </select>
+  <input type="number" class="form-control" [(ngModel)]="statUtil[num]['valeur']">
+</li>

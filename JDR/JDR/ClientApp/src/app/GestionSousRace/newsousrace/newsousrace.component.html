@@ -1,0 +1,32 @@
+<span>
+  <p> nom : </p>
+  <input type="text" class="form-control" [(ngModel)]="sousRace['nom']" />
+</span>
+<span>
+  <p> description : </p>
+  <input type="text" class="form-control" [(ngModel)]="sousRace['definition']" />
+</span>
+
+<p> disponnible pour : </p>
+<select id="stat" class="form-control" [(ngModel)]="sousRace['idRace']">
+  <!-- Below line will be looped through the keys and for every key, set label as value from enum pair and key as value attribute of <option> tag-->
+  <option *ngFor="let obj of races" [ngValue]="obj.id">{{ obj.nom }}</option>
+</select>
+<div>
+</div>
+
+
+
+<ul class="list-group">
+  <app-new-stat-race *ngFor="let obj of sousRace['stat'] ; let i = index"
+                     [raceStat]="sousRace['stat'][i]">    </app-new-stat-race>
+</ul>
+
+<p> ajouter une stat</p>
+<select id="stat" class="form-control" [(ngModel)]="statSousRaceid">
+  <!-- Below line will be looped through the keys and for every key, set label as value from enum pair and key as value attribute of <option> tag-->
+  <option *ngFor="let obj of stats" [ngValue]="obj.id">{{ obj.nom }}</option>
+</select>
+<button class="btn btn-primary" (click)="addStat()"> Ajoute stat</button>
+
+<button (click)=Modif() class="btn btn-success"> Valider</button>

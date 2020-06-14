@@ -1,0 +1,15 @@
+<h2> Stats </h2>
+<a class="nav-link text-dark" [routerLink]="['/new-stat']">ajouter stats</a>
+<div class="col-xs-12">
+  <ul class="list-group">
+    <app-statinfo *ngFor="let obj of stats"
+                [nom]="obj.nom"
+                [definition]="obj.definition"
+                [id]="obj.id"
+                [type]="obj.type"
+                [stats]="obj.stats">    </app-statinfo>
+  </ul>
+  <button class="btn btn-success" (click)="onFetch()"> Charger</button>
+
+
+</div>
